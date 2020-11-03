@@ -1,0 +1,70 @@
+@import "./app.scss";
+
+
+@mixin themeify {
+    @each $theme-name, $theme-map in $themes {
+        $theme-map: $theme-map !global;
+        [data-theme="#{$theme-name}"] & {
+            @content;
+        }
+    }
+}
+
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
+
+
+@mixin background_color($color) {
+    @include themeify {
+        background-color: themed($color)!important;
+    }
+}
+
+
+
+
+
+@mixin index_background_image($color) {
+    @include themeify {
+        background-image: themed($color)!important;
+    }
+}
+@mixin speak_background_image($color) {
+    @include themeify {
+        background-image: themed($color)!important;
+    }
+}
+@mixin indexContainer($color) {
+    @include themeify {
+        background-image: themed($color)!important;
+    }
+}
+@mixin speakContainer($color) {
+    @include themeify {
+        background-image: themed($color)!important;
+    }
+}
+
+@mixin micText($color) {
+    @include themeify {
+        color: themed($color)!important;
+    }
+}
+@mixin indexFootBgColor($color) {
+    @include themeify {
+        background-color: themed($color)!important;
+    }
+}
+@mixin speakFootBgColor($color) {
+    @include themeify {
+        background-color: themed($color)!important;
+    }
+}
+
+@mixin inputBgColor($color) {
+    @include themeify {
+        background-color: themed($color)!important;
+    }
+}
